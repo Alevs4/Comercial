@@ -27,7 +27,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class EditarFolio extends AppCompatActivity {
@@ -56,46 +58,34 @@ public class EditarFolio extends AppCompatActivity {
 
         Fecha.setOnClickListener(v -> seleccionarFecha());
 
-        String[] turno = {"","Turno 1", "Turno 2"};
+        String[] turno = {"Selecciona","Turno 1", "Turno 2"};
 
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, turno);
+        SpinnerTextoGrande adapter3 = new SpinnerTextoGrande(this, Arrays.asList(turno));
         Turno.setAdapter(adapter3);
 
-        String[] SiNo = {"","Cajas", "Totem","Bins"};
+        String[] SiNo = {"Selecciona","Cajas", "Totem","Bins"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, SiNo);
+        SpinnerTextoGrande adapter = new SpinnerTextoGrande(this, Arrays.asList(SiNo));
         Spn.setAdapter(adapter);
 
-        String[] Categoria = {"","Comercial", "Pre Calibre","Desecho","Desecho Basura"};
+        String[] Categoria = {"Selecciona","Comercial", "Pre Calibre","Desecho","Desecho Basura"};
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Categoria);
+        SpinnerTextoGrande adapter1 = new SpinnerTextoGrande(this, Arrays.asList(Categoria));
         SpnCategoria.setAdapter(adapter1);
 
         new Thread(() -> {
             ArrayList<String> exportadoras = obtenerExportadoras();
 
-            runOnUiThread(() -> {
-                // Primera opción visible por defecto
-                exportadoras.add(0, "Seleccione una exportadora");
+            runOnUiThread(() -> {SpinnerTextoGrande Exportadora = new SpinnerTextoGrande(this, exportadoras);
 
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(
-                        this,
-                        android.R.layout.simple_spinner_item,
-                        exportadoras
-                );
-
-                adapter2.setDropDownViewResource(
-                        android.R.layout.simple_spinner_dropdown_item
-                );
-
-                Productor.setAdapter(adapter2);
+                Productor.setAdapter(Exportadora);
                 Productor.setSelection(0);
             });
         }).start();
 
-        String[] especies = {"", "Cerezas", "Ciruelas"};
+        String[] especies = {"Selecciona", "Cerezas", "Ciruelas"};
 
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, especies);
+        SpinnerTextoGrande adapter4 = new SpinnerTextoGrande(this, Arrays.asList(especies));
         Especie.setAdapter(adapter4);
 
         String[] variedadesCereza = {"Lapins", "Santina", "Regina", "Bing","Royal Dawn","Kordia","Sweet Heart","Garnet","Sam","Stella","Rainier","Royal Tioga","Royal Lynn","Royal Hazel"
@@ -119,32 +109,43 @@ public class EditarFolio extends AppCompatActivity {
 
         });
         // Listener para cambiar variedades según especie
+        // Listener para cambiar variedades según especie
         Especie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String especieSeleccionada = especies[position];
 
-                ArrayAdapter<String> adapterVariedad;
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+
+                String especieSeleccionada = especies[position];
+                List<String> listaVariedades;
 
                 switch (especieSeleccionada) {
                     case "Cerezas":
-                        adapterVariedad = new ArrayAdapter<>(EditarFolio.this, android.R.layout.simple_spinner_item, variedadesCereza);
+                        listaVariedades = Arrays.asList(variedadesCereza);
                         break;
+
                     case "Ciruelas":
-                        adapterVariedad = new ArrayAdapter<>(EditarFolio.this, android.R.layout.simple_spinner_item, variedadesCiruela);
+                        listaVariedades = Arrays.asList(variedadesCiruela);
                         break;
+
                     default:
-                        adapterVariedad = new ArrayAdapter<>(EditarFolio.this, android.R.layout.simple_spinner_item, new String[]{"Selecciona especie primero"});
+                        listaVariedades = Arrays.asList(
+                                "Selecciona especie primero"
+                        );
                         break;
                 }
 
-                adapterVariedad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                SpinnerTextoGrande adapterVariedad =
+                        new SpinnerTextoGrande(
+                                EditarFolio.this,
+                                listaVariedades
+                        );
+
                 Variedad.setAdapter(adapterVariedad);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
