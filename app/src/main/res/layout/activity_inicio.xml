@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicio"
+    tools:ignore="ExtraText">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck,UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:text="Seleccione Tarea Fruta Comercial"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+             <TextView
+                android:id="@+id/textView3"
+                android:layout_width="262dp"
+                android:layout_height="90dp"
+                android:background="@drawable/logo_ftts" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <!-- REGISTRAR -->
+            <Button
+                android:id="@+id/BtnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:onClick="Registrar"
+                android:text="Registrar"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="36dp" />
+
+            <!-- EDITAR -->
+            <Button
+                android:id="@+id/BtnEditar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:onClick="Editar"
+                android:text="Editar"
+                android:textSize="20sp"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <!-- CONSULTAR -->
+            <Button
+                android:id="@+id/BtnConsultar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:onClick="Consultar"
+                android:text="Consultar"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <!-- DESPACHAR -->
+            <Button
+                android:id="@+id/BtnLiberar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:onClick="Liberar"
+                android:text="Despachar Fruta"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/textViewDespachar"
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <!-- ELIMINAR -->
+            <Button
+                android:id="@+id/BtnEliminar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:onClick="Eliminar"
+                android:text="Eliminar"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="490dp"
+                android:background="@drawable/desc_cerezas" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

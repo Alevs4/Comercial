@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".LiberarFolio">
+
+    <!-- ===================================================== -->
+    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ===================================================== -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="25dp">
+
+
+        <!-- ================================================= -->
+        <!-- TÍTULO -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Despachar Fruta"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            android:layout_marginBottom="10dp" />
+
+
+        <!-- ================================================= -->
+        <!-- LOGO FRUTTITA -->
+        <!-- ================================================= -->
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="170dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo_ftts" />
+
+
+        <!-- ================================================= -->
+        <!-- FOLIO -->
+        <!-- ================================================= -->
+        <!--
+             Este es el único campo que el usuario debe ingresar
+             para buscar el folio que desea despachar.
+        -->
+
+        <EditText
+            android:id="@+id/TxtRespFolio"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Folio"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+
+
+        <!-- ================================================= -->
+        <!-- EXPORTADORA -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exportadora"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TxtRespProductor"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!-- ================================================= -->
+        <!-- VARIEDAD -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Variedad"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TxtRespVariedad"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!-- ================================================= -->
+        <!-- KILOS -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kilos"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TxtRespKilos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!-- ================================================= -->
+        <!-- CATEGORÍA -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoría"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TxtLiberarCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!-- ================================================= -->
+        <!-- BOTÓN BUSCAR -->
+        <!-- ================================================= -->
+
+        <Button
+            android:id="@+id/BtnRespuesta"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#4000C8"
+            android:onClick="Consultar"
+            android:text="Buscar"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!-- ================================================= -->
+        <!-- ESPACIO -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+        <!-- ================================================= -->
+        <!-- BOTÓN DESPACHAR -->
+        <!-- ================================================= -->
+
+        <Button
+            android:id="@+id/BtnLiberar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:onClick="Liberar"
+            android:text="Despachar"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!-- ================================================= -->
+        <!-- ESPACIO -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+
+        <!-- ================================================= -->
+        <!-- BOTÓN CASA -->
+        <!-- ================================================= -->
+
+
+        <ImageButton
+            android:id="@+id/BtnCasa"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boton_casa"
+            android:src="@drawable/ic_casa"
+            android:scaleType="centerInside"
+            android:padding="15dp"
+            android:contentDescription="Volver al menú principal" />
+
+    </LinearLayout>
+
+</ScrollView>

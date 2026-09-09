@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="25dp"
+    android:paddingEnd="25dp"
+    android:paddingTop="45dp"
+    android:paddingBottom="30dp"
+    tools:context=".MainActivity">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ingreso a la App"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="190dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:contentDescription="Logo Fruttita"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/logo_ftts" />
+
+    <!-- ESPACIO ENTRE LOGO Y FORMULARIO -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- FORMULARIO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- USUARIO -->
+        <EditText
+            android:id="@+id/TxtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Usuario"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_marginBottom="15dp"
+            tools:ignore="TextContrastCheck" />
+
+        <!-- PASSWORD -->
+        <EditText
+            android:id="@+id/TxtPass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Password"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_marginBottom="25dp"
+            tools:ignore="TextContrastCheck" />
+
+        <!-- BOTÓN -->
+        <Button
+            android:id="@+id/BtnIngreso"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="INGRESAR"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/design_default_color_primary_variant"
+            android:onClick="Ingreso" />
+
+    </LinearLayout>
+
+    <!-- ESPACIO INFERIOR -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
